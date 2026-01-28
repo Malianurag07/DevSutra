@@ -1,0 +1,32 @@
+services:
+  # Django Backend
+  - type: web
+    name: devsutra-backend
+    env: python
+    buildCommand: "pip install -r requirements.txt && python manage.py migrate"
+    startCommand: "gunicorn DevSutra.wsgi:application"
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11
+      - key: DEBUG
+        value: False
+      - key: DATABASE_URL
+        fromDatabase:
+          name: devsutra-db
+          property: connectionString
+
+  # PostgreSQL Database
+  - type: pgsql
+    name: devsutra-db
+    databaseName: devsutra
+    plan: free
+
+  # Next.js Frontend
+  - type: web
+    name: devsutra-frontend
+    env: node
+    buildCommand: "cd frontend && npm install && npm run build"
+    startCommand: "cd frontend && npm start"
+    envVars:
+      - key: NODE_VERSION
+        value: 18
