@@ -25,7 +25,17 @@ SECRET_KEY = 'django-insecure-%#j0a)^el+68u1n^l68_4#bf^()slbhv!41+v3#g@$4m8w4_0o
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+# ALLOWED_HOSTS configuration
+import os
+ALLOWED_HOSTS = [
+    'localhost',
+    '127.0.0.1',
+    'devsutra-backend.onrender.com',
+]
+
+# Add from environment variable if present
+if 'ALLOWED_HOSTS' in os.environ:
+    ALLOWED_HOSTS.extend(os.environ.get('ALLOWED_HOSTS', '').split(','))
 
 
 # Application definition
