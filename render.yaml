@@ -7,19 +7,9 @@ services:
     startCommand: "gunicorn DevSutra.wsgi:application"
     envVars:
       - key: PYTHON_VERSION
-        value: 3.11
+        value: "3.11"
       - key: DEBUG
-        value: False
-      - key: DATABASE_URL
-        fromDatabase:
-          name: devsutra-db
-          property: connectionString
-
-  # PostgreSQL Database
-  - type: pgsql
-    name: devsutra-db
-    databaseName: devsutra
-    plan: free
+        value: "False"
 
   # Next.js Frontend
   - type: web
@@ -29,4 +19,9 @@ services:
     startCommand: "cd frontend && npm start"
     envVars:
       - key: NODE_VERSION
-        value: 18
+        value: "18"
+
+databases:
+  - name: devsutra-db
+    databaseName: devsutra
+    user: devsutra
