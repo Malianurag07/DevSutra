@@ -5,6 +5,12 @@ You have requested a **completely free** hosting solution. Since Netlify is stat
 1.  **Frontend**: **Netlify** (Free, Global CDN, fast)
 2.  **Backend & Database**: **PythonAnywhere** (Free, supports Django + SQLite natively)
 
+### 💾 About the Database
+We are using **SQLite**. 
+*   **Where is it?** It is a file (`db.sqlite3`) that lives directly on your PythonAnywhere server.
+*   **Cost?** Free (included with your PythonAnywhere account).
+*   **Setup?** Automatic. The `python manage.py migrate` command creates it for you.
+
 ---
 
 ## Part 1: Push Changes to GitHub
