@@ -3,6 +3,7 @@ services:
   - type: web
     name: devsutra-backend
     env: python
+    plan: free
     buildCommand: "pip install -r requirements.txt && python manage.py migrate"
     startCommand: "gunicorn DevSutra.wsgi:application"
     envVars:
@@ -15,6 +16,7 @@ services:
   - type: web
     name: devsutra-frontend
     env: node
+    plan: free
     buildCommand: "cd frontend && npm install && npm run build"
     startCommand: "cd frontend && npm start"
     envVars:
