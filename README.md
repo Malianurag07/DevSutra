@@ -31,7 +31,20 @@ DevSutra is a modern coding challenge platform designed to help developers progr
 - **Database**: SQLite (development)
 - **API**: Django REST Framework
 
-## 📦 Installation
+## 📦 Installation & Usage
+
+### 🚀 Option 1: One-Click Desktop Mode (Recommended for Laptop)
+
+We have created a simple launcher that handles everything for you.
+
+1.  **Double-click** the `run_devsutra.bat` file in the project folder.
+2.  That's it! It will:
+    *   Set up the environment.
+    *   Start the Database and Backend.
+    *   Start the Frontend.
+    *   Open the app in your browser automatically.
+
+### ⚙️ Option 2: Manual Setup
 
 ### Prerequisites
 - Node.js 18+ 
